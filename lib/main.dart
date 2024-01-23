@@ -31,9 +31,11 @@ class MyApp extends StatelessWidget {
           foregroundColor: Colors.white,
         ),
       ),
-      home: CategoriesScreen(),
+      // home: CategoriesScreen(),
+      initialRoute: '/', // default is '/'
       routes : {
-        '/category-meals': (ctx) => CategoryMealsScreen()
+        '/' : (ctx) =>CategoriesScreen(),
+        CategoryMealsScreen.routeName : (ctx) => CategoryMealsScreen()
       },
     );
   }
