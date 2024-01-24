@@ -6,7 +6,8 @@ class MealDetailScreen extends StatelessWidget {
   Widget buildSectionTitle(BuildContext context, String text) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
-      child: Text(text,
+      child: Text(
+        text,
         style: Theme.of(context).textTheme.titleLarge,
       ),
     );
@@ -34,7 +35,9 @@ class MealDetailScreen extends StatelessWidget {
     final selectedMeal = DUMMY_MEALS.firstWhere((meal) => meal.id == mealId);
     return Scaffold(
       appBar: AppBar(
-        title: Text('${selectedMeal.title}'),
+        title: Text(
+          '${selectedMeal.title}',
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -51,7 +54,8 @@ class MealDetailScreen extends StatelessWidget {
             buildContainer(
               ListView.builder(
                 itemBuilder: (ctx, index) => Card(
-                  color: Theme.of(context).colorScheme.secondary,
+                  // color: Theme.of(context).colorScheme.secondary,
+                  color: Colors.deepPurple[200],
                   child: Padding(
                     padding: EdgeInsets.symmetric(
                       horizontal: 10,
@@ -72,8 +76,9 @@ class MealDetailScreen extends StatelessWidget {
                 itemBuilder: (ctx, index) => Column(
                   children: [
                     ListTile(
-                      leading: CircleAvatar( backgroundColor: Colors.pink,
-                      foregroundColor: Colors.white,
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.pink,
+                        foregroundColor: Colors.white,
                         child: Text('# ${index + 1}'),
                       ),
                       title: Text(
@@ -87,6 +92,14 @@ class MealDetailScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+          Icons.delete,
+        ),
+        onPressed: () {
+          Navigator.of(context).pop(mealId);
+        },
       ),
     );
   }

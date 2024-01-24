@@ -22,7 +22,7 @@ class Meal {
   final int duration;
   final Complexity complexity;
   final Affordability affordability;
-  final bool isGluttenFree;
+  final bool isGlutenFree;
   final bool isLactoseFree;
   final bool isVegan;
   final bool isVegetarian;
@@ -36,7 +36,7 @@ class Meal {
     required this.duration,
     required this.complexity,
     required this.affordability,
-    required this.isGluttenFree,
+    required this.isGlutenFree,
     required this.isLactoseFree,
     required this.isVegan,
     required this.isVegetarian,
